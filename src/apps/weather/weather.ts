@@ -229,7 +229,7 @@ export class WeatherJob extends Job {
         return
       }
 
-      const body: OpenWeatherData = await res.json()
+      const body: OpenWeatherData = await res.json() as OpenWeatherData
 
       let currentIcon = iconMap[body.current.weather[0].icon]
       if (!currentIcon) {

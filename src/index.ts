@@ -4,19 +4,19 @@ import {FrameBuffer} from './framebuffer'
 import {Surface} from './surface'
 
 import {AppManager} from './app'
-import {Calendar} from './apps/calendar/calendar'
+// import {Calendar} from './apps/calendar/calendar'
 import {Rainbow} from './apps/rainbow/rainbow'
-import {Weather, WeatherHourly, WeatherJob} from './apps/weather/weather'
+// import {Weather, WeatherHourly, WeatherJob} from './apps/weather/weather'
 
-import {loadConfig} from './config'
+// import {loadConfig} from './config'
 
-const second = 1000
-const minute = 60 * second
+// const second = 1000
+// const minute = 60 * second
 
 class Matrix {
   apps: AppManager
   buffer: FrameBuffer
-  config: Config
+  // config: Config
   surface: Surface
 
   constructor() {
@@ -27,7 +27,7 @@ class Matrix {
     this.surface = new Surface(width, height, brightness)
     this.buffer = new FrameBuffer(width, height)
 
-    const config = this.config = loadConfig('../config.json')
+    // const config = this.config = loadConfig('../config.json')
 
     this.apps = new AppManager()
     // this.apps.addJob('weather', new WeatherJob(config.weather), 5 * minute)

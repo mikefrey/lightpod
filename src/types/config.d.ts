@@ -5,6 +5,7 @@ interface CalendarConfig {
 interface ImportantDate {
   month: number
   day: number
+  type: 'birthday' | 'anniversary'
 }
 
 interface WeatherConfig {

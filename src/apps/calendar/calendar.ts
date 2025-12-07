@@ -24,14 +24,19 @@ enum Colors {
   anniversary = 0xFFFF00
 }
 
+interface iDate {
+  type: 'birthday' | 'anniversary'
+  date: Date
+}
+
 export class Calendar extends App {
   today = new Date(0)
-  dates: ImportantDate[]
+  dates: iDate[]
   cache = new FrameBuffer(64, 8)
 
   constructor(cfg: CalendarConfig) {
     super()
-    this.dates = cfg.dates
+    this.dates = cfg.dates.map(d => ({type: d.type, date: dateSet(new Date(), {month: d.month-1, date: d.day})}))
   }
 
   update(ts: number) {
@@ -42,8 +47,6 @@ export class Calendar extends App {
 
     this.cache.clear()
     this.today = today
-
-    this.dates.forEach(d => d.date = dateSet(new Date(), {month: d.month-1, date: d.day}))
 
     const start = startOfYear(this.today)
     const count = getDaysInYear(this.today)
@@ -56,7 +59,7 @@ export class Calendar extends App {
         color = Colors.past
       }
 
-      const important = this.dates.find(id => isSameDay(id.date, day))
+      const important = this.dates.find(d => isSameDay(d.date, day))
       if (important) {
         switch (important.type) {
           case 'birthday': color = Colors.birthday; break
