@@ -8,7 +8,7 @@ export abstract class App {
 }
 
 export abstract class Job {
-  abstract async run(): Promise<any>
+  abstract run(): Promise<any>
 }
 
 interface JobEntry {

@@ -30,11 +30,11 @@ class Matrix {
     const config = this.config = loadConfig('../config.json')
 
     this.apps = new AppManager()
-    this.apps.addJob('weather', new WeatherJob(config.weather), 5 * minute)
+    // this.apps.addJob('weather', new WeatherJob(config.weather), 5 * minute)
 
-    this.apps.addApp('weatherHourly', new WeatherHourly(), 'weather')
-    this.apps.addApp('weather', new Weather(), 'weather')
-    this.apps.addApp('calendar', new Calendar(config.calendar))
+    // this.apps.addApp('weatherHourly', new WeatherHourly(), 'weather')
+    // this.apps.addApp('weather', new Weather(), 'weather')
+    // this.apps.addApp('calendar', new Calendar(config.calendar))
     this.apps.addApp('rainbow', new Rainbow())
   }
 

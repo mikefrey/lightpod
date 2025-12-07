@@ -19,7 +19,7 @@ export class Surface {
       map: 'matrix',
       dma: 10,
       brightness: brightness, // 0 - 255
-      gpio: 18,
+      gpio: 22,
       type: 'grb',
     }
 
