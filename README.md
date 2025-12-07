@@ -1,2 +1,2 @@
-# matrix-ts
-64 x 8 LED Matrix Display
+# lightpod
+32 x 16 Round LED Matrix Display
