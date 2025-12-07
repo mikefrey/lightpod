@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.1",
+    "@types/node-fetch": "^2.6.13",
+    "@types/omggif": "^1.0.5",
     "mocha": "^11.7.5",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
